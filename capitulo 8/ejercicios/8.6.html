@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- Ejercicio 8.6: menor_enteros.html -->
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>El menor de varios enteros</title>
+      <script>
+         var cantidad = parseInt(window.prompt("¿Cuántos números enteros no negativos desea comparar?", "5"));
+
+         if (cantidad > 0)
+         {
+            var primerNumero = parseInt(window.prompt("Introduzca el número 1 de " + cantidad + ":", "0"));
+            var menor = primerNumero;
+
+            for (var i = 2; i <= cantidad; ++i)
+            {
+               var numero = parseInt(window.prompt("Introduzca el número " + i + " de " + cantidad + ":", "0"));
+               if (numero < menor)
+               {
+                  menor = numero;
+               }
+            }
+
+            document.writeln("<h1>Resultado</h1>");
+            document.writeln("<p>Total de números comparados: " + cantidad + "</p>");
+            document.writeln("<p>El número menor introducido es: <strong>" + menor + "</strong></p>");
+         }
+         else
+         {
+            document.writeln("<h1>No se introdujo una cantidad válida.</h1>");
+         }
+      </script>
+   </head>
+   <body></body>
+</html>

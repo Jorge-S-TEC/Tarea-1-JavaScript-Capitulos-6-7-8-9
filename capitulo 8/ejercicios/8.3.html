@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!-- Ejercicio 8.3: correccion_errores.html -->
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 8.3 - Corrección de errores</title>
+      <script>
+         document.writeln("<h1>Ejercicio 8.3 - Errores corregidos</h1>");
+
+         // a) Error: había un ';' después de la condición while que creaba un ciclo infinito vacío, y faltaba '{'.
+         document.writeln("<h3>a) While corregido:</h3>");
+         var x = 1;
+         while (x <= 10)
+         {
+            document.write(x + " ");
+            ++x;
+         }
+
+         // b) Error: faltaba 'break;' en case 1:, lo que provocaba que se ejecutara también case 2:.
+         document.writeln("<h3>b) Switch corregido:</h3>");
+         var n = 1;
+         switch (n)
+         {
+            case 1:
+               document.writeln("El n&uacute;mero es 1<br>");
+               break;
+            case 2:
+               document.writeln("El n&uacute;mero es 2<br>");
+               break;
+            default:
+               document.writeln("El n&uacute;mero no es 1 ni 2<br>");
+               break;
+         }
+
+         // c) Error: la condición n < 10 solo imprimía hasta 9; debe ser n <= 10 para llegar a 10.
+         document.writeln("<h3>c) Conteo del 1 al 10 corregido:</h3>");
+         var num = 1;
+         while (num <= 10)
+         {
+            document.write(num++ + " ");
+         }
+      </script>
+   </head>
+   <body></body>
+</html>

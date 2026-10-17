@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!-- Ejercicio 8.12: expresiones_logicas.html -->
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 8.12 - Expresiones Lógicas</title>
+      <script>
+         var i = 1, j = 2, k = 3, m = 2;
+
+         document.writeln("<h1>Resultados del Ejercicio 8.12</h1>");
+         document.writeln("<p>Valores dados: i = 1, j = 2, k = 3, m = 2</p>");
+
+         document.writeln("<p>a) ( i == 1 ): <strong>" + ( i == 1 ) + "</strong></p>");
+         document.writeln("<p>b) ( j == 3 ): <strong>" + ( j == 3 ) + "</strong></p>");
+         document.writeln("<p>c) ( i >= 1 && j < 4 ): <strong>" + ( i >= 1 && j < 4 ) + "</strong></p>");
+         document.writeln("<p>d) ( m <= 99 && k < m ): <strong>" + ( m <= 99 && k < m ) + "</strong></p>");
+         document.writeln("<p>e) ( j >= i || k == m ): <strong>" + ( j >= i || k == m ) + "</strong></p>");
+         document.writeln("<p>f) ( k + m < j || 3 - j >= k ): <strong>" + ( k + m < j || 3 - j >= k ) + "</strong></p>");
+         document.writeln("<p>g) ( !( k > m ) ): <strong>" + ( !( k > m ) ) + "</strong></p>");
+
+         document.writeln("<p><em>¿Son necesarios los paréntesis?</em> Los paréntesis exteriores de la llamada a document.writeln() son obligatorios. Los paréntesis internos alrededor de las subexpresiones aritméticas y relacionales no son estrictamente necesarios gracias a la precedencia de operadores en JavaScript, pero se recomienda usarlos para mejorar la legibilidad.</p>");
+      </script>
+   </head>
+   <body></body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!-- Ejercicio 8.13: prueba_switch.html -->
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 8.13 - Prueba de Switch</title>
+      <script>
+         var entrada = window.prompt("Introduzca un valor entero para k:", "2");
+         var k = parseInt(entrada);
+         var kInicial = k;
+         var x;
+
+         switch (k)
+         {
+            case 1:
+               break;
+            case 2:
+            case 3:
+               ++k;
+               break;
+            case 4:
+               --k;
+               break;
+            default:
+               k *= 3;
+         } //fin de switch
+
+         x = k;
+
+         document.writeln("<h1>Resultado de la instrucción switch</h1>");
+         document.writeln("<p>Valor inicial de k: " + kInicial + "</p>");
+         document.writeln("<p>Valor final de x (y k): <strong>" + x + "</strong></p>");
+
+         document.writeln("<h3>Comportamiento para cada caso:</h3>");
+         document.writeln("<ul>");
+         document.writeln("<li>Si k = 1 &rarr; x = 1 (no cambia).</li>");
+         document.writeln("<li>Si k = 2 &rarr; cae al caso 3, incrementa k en 1 &rarr; x = 3.</li>");
+         document.writeln("<li>Si k = 3 &rarr; incrementa k en 1 &rarr; x = 4.</li>");
+         document.writeln("<li>Si k = 4 &rarr; decrementa k en 1 &rarr; x = 3.</li>");
+         document.writeln("<li>Cualquier otro valor &rarr; se multiplica por 3 (ej. k = 5 &rarr; x = 15).</li>");
+         document.writeln("</ul>");
+      </script>
+   </head>
+   <body></body>
+</html>

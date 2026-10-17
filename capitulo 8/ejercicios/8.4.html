@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- Ejercicio 8.4: corregir_segmentos.html -->
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 8.4 - Errores en segmentos</title>
+      <script>
+         document.writeln("<h1>Ejercicio 8.4 - Errores corregidos</h1>");
+
+         // a) Errores: 'For' con mayúscula, comas en vez de ';' y '++x' en vez de '--x'.
+         document.writeln("<h3>a) Conteo descendente de 100 a 1:</h3>");
+         for (var x = 100; x >= 1; --x)
+            document.write(x + " ");
+
+         // b) Error: faltaba 'break;' en 'case 0:'.
+         document.writeln("<h3>b) Switch par/impar:</h3>");
+         var valor = 4;
+         switch (valor % 2)
+         {
+            case 0:
+               document.writeln("<p>Entero par (" + valor + ")</p>");
+               break;
+            case 1:
+               document.writeln("<p>Entero impar (" + valor + ")</p>");
+               break;
+         }
+
+         // c) Error: 'x += 2' sumaba en lugar de restar; debe ser 'x -= 2'.
+         document.writeln("<h3>c) Impares del 19 al 1:</h3>");
+         for (var imp = 19; imp >= 1; imp -= 2)
+            document.write(imp + " ");
+
+         // d) Errores: 'While' con mayúscula y 'contador < 100' no alcanzaba el 100; debe ser '<='.
+         document.writeln("<h3>d) Pares del 2 al 100 con do...while:</h3>");
+         var contador = 2;
+         do {
+            document.write(contador + " ");
+            contador += 2;
+         } while (contador <= 100);
+      </script>
+   </head>
+   <body></body>
+</html>
