@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 9.13 - Potencia entera</title>
+      <script>
+         function calcular() {
+            var b = parseInt(document.getElementById("base").value);
+            var e = parseInt(document.getElementById("exp").value);
+            document.getElementById("salida").innerHTML = 
+               "<p>" + b + "<sup>" + e + "</sup> = <strong>" + potenciaEntera(b, e) + "</strong></p>";
+         }
+
+         function potenciaEntera(base, exponente) {
+            var res = 1;
+            for (var i = 1; i <= exponente; ++i) {
+               res *= base;
+            }
+            return res;
+         }
+      </script>
+   </head>
+   <body>
+      <h1>Potencia Entera</h1>
+      <form action="#">
+         Base: <input id="base" type="number" value="3">
+         Exponente: <input id="exp" type="number" min="0" value="4">
+         <input type="button" value="Calcular" onclick="calcular()">
+      </form>
+      <div id="salida"></div>
+   </body>
+</html>

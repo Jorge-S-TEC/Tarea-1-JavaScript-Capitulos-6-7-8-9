@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 9.2 - Alcance de identificadores</title>
+      <script>
+         document.writeln("<h1>Respuestas del Ejercicio 9.2 (Figura 9.13)</h1>");
+         document.writeln("<ul>");
+         document.writeln("<li><strong>a) La variable x:</strong> Tiene <em>alcance global</em>, ya que se declara fuera de cualquier función y es accesible en todo el script.</li>");
+         document.writeln("<li><strong>b) La variable y:</strong> Tiene <em>alcance de función (local)</em>, ya que es un parámetro formal de la función <code>cubo( y )</code> y solo existe dentro de ella.</li>");
+         document.writeln("<li><strong>c) La función cubo:</strong> Tiene <em>alcance global</em>, se define a nivel de script y puede llamarse desde cualquier parte del mismo.</li>");
+         document.writeln("<li><strong>d) La función salida:</strong> Tiene <em>alcance global</em>, se define a nivel de script.</li>");
+         document.writeln("</ul>");
+
+         // Demostración del programa cubo.html
+         document.writeln("<h3>Salida del programa:</h3>");
+         var x;
+         function cubo(y) { return y * y * y; }
+         for (x = 1; x <= 10; x++) {
+            document.writeln("<p>" + x + " al cubo = " + cubo(x) + "</p>");
+         }
+      </script>
+   </head>
+   <body></body>
+</html>

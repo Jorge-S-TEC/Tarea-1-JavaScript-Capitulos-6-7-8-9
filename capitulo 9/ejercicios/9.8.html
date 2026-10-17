@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 9.8 - Cargos de estacionamiento</title>
+      <script>
+         var totalRecibos = 0.0;
+
+         function procesarCliente() {
+            var horas = parseFloat(document.getElementById("campoHoras").value);
+            var salida = document.getElementById("resultado");
+
+            if (!isNaN(horas) && horas > 0 && horas <= 24) {
+               var cargo = calcularCargos(horas);
+               totalRecibos += cargo;
+               salida.innerHTML = "<p>Cargo para este cliente: <strong>$" + cargo.toFixed(2) + "</strong></p>" +
+                                  "<p>Total acumulado de recibos de ayer: <strong>$" + totalRecibos.toFixed(2) + "</strong></p>";
+            } else {
+               salida.innerHTML = "<p style='color:red;'>Horas inválidas (máximo 24 hrs).</p>";
+            }
+         }
+
+         function calcularCargos(h) {
+            if (h <= 3) return 2.00;
+            var cargo = 2.00 + Math.ceil(h - 3) * 0.50;
+            return Math.min(cargo, 10.00);
+         }
+      </script>
+   </head>
+   <body>
+      <h1>Estacionamiento</h1>
+      <form action="#">
+         <label>Horas estacionado: <input id="campoHoras" type="number" step="any" min="0.1" max="24"></label>
+         <input type="button" value="Calcular Cargo" onclick="procesarCliente()">
+      </form>
+      <div id="resultado"></div>
+   </body>
+</html>

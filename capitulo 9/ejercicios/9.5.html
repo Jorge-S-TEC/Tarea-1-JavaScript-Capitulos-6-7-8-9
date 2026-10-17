@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 9.5 - Corrección de errores</title>
+      <script>
+         document.writeln("<h1>Ejercicio 9.5 - Errores y Correcciones</h1>");
+
+         document.writeln("<h3>a) method g()</h3>");
+         document.writeln("<p><strong>Error:</strong> En JavaScript se utiliza la palabra clave <code>function</code>, no <code>method</code>.</p>");
+         document.writeln("<p><strong>Corrección:</strong> <code>function g() { document.writeln('Dentro de g'); }</code></p>");
+
+         document.writeln("<h3>b) function suma(x, y)</h3>");
+         document.writeln("<p><strong>Error:</strong> La función calcula <code>resultado = x + y;</code> pero no devuelve el valor porque falta la instrucción <code>return</code>.</p>");
+         document.writeln("<p><strong>Corrección:</strong> Agregar <code>return resultado;</code> (o <code>return x + y;</code>).</p>");
+
+         document.writeln("<h3>c) function f( a )</h3>");
+         document.writeln("<p><strong>Explicación:</strong> Sintácticamente es correcta, pero imprime en pantalla en vez de retornar un valor. Si se requiere usar el resultado en un cálculo, debe retornar el dato en lugar de imprimirlo directamente.</p>");
+
+         // Demostración de las funciones corregidas
+         function g() { document.writeln("<p>Dentro de la función g corregida</p>"); }
+         function suma(x, y) { return x + y; }
+         function f(a) { document.writeln("<p>Valor en f: " + a + "</p>"); }
+
+         g();
+         document.writeln("<p>Resultado de suma(3, 4): " + suma(3, 4) + "</p>");
+         f(10);
+      </script>
+   </head>
+   <body></body>
+</html>

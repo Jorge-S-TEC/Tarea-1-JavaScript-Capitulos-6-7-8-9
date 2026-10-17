@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 9.30 - Función misterio</title>
+      <script>
+         function misterio(a, b) {
+            if (b === 1)
+               return a;
+            else
+               return a + misterio(a, b - 1);
+         }
+
+         document.writeln("<h1>¿Qué hace la función misterio(a, b)?</h1>");
+         document.writeln("<p>La función calcula la <strong>multiplicación de a &times; b</strong> de manera recursiva mediante sumas sucesivas.</p>");
+         document.writeln("<p>Ejemplo interactivo con misterio(4, 3): <strong>" + misterio(4, 3) + "</strong> (equivale a 4 + 4 + 4 = 12).</p>");
+      </script>
+   </head>
+   <body></body>
+</html>

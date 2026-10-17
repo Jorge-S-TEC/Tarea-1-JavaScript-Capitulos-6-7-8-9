@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Tirar dados aleatorios</title>
+
+    <style>
+        ol {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            display: inline-block;
+            margin-right: 10px;
+            list-style-type: none;
+        }
+
+        img {
+            width: 80px;
+            height: 80px;
+        }
+    </style>
+
+    <script>
+        var imagenDado1;
+        var imagenDado2;
+        var imagenDado3;
+        var imagenDado4;
+
+        function iniciar() {
+            var boton = document.getElementById("botonTirar");
+
+            boton.addEventListener("click", tirarDados, false);
+
+            imagenDado1 = document.getElementById("dado1");
+            imagenDado2 = document.getElementById("dado2");
+            imagenDado3 = document.getElementById("dado3");
+            imagenDado4 = document.getElementById("dado4");
+        }
+
+        function tirarDados() {
+            establecerImagen(imagenDado1);
+            establecerImagen(imagenDado2);
+            establecerImagen(imagenDado3);
+            establecerImagen(imagenDado4);
+        }
+
+        function establecerImagen(imgDado) {
+            var valorDado = Math.floor(1 + Math.random() * 6);
+
+            imgDado.setAttribute("src", "dado" + valorDado + ".png");
+
+            imgDado.setAttribute(
+                "alt",
+                "Dado con " + valorDado + " puntos"
+            );
+        }
+
+        window.addEventListener("load", iniciar, false);
+    </script>
+</head>
+
+<body>
+    <h2>Tirar cuatro dados aleatorios</h2>
+
+    <form action="#">
+        <input
+            id="botonTirar"
+            type="button"
+            value="Tirar dados"
+        >
+    </form>
+
+    <br>
+
+    <ol>
+        <li>
+            <img id="dado1" src="blanco.png" alt="Dado 1">
+        </li>
+
+        <li>
+            <img id="dado2" src="blanco.png" alt="Dado 2">
+        </li>
+
+        <li>
+            <img id="dado3" src="blanco.png" alt="Dado 3">
+        </li>
+
+        <li>
+            <img id="dado4" src="blanco.png" alt="Dado 4">
+        </li>
+    </ol>
+</body>
+</html>

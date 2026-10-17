@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 9.22 - Aprendizaje de multiplicación</title>
+      <script>
+         var num1, num2;
+
+         function nuevaPregunta() {
+            num1 = Math.floor(1 + Math.random() * 9);
+            num2 = Math.floor(1 + Math.random() * 9);
+            document.getElementById("pregunta").innerHTML = "¿Cuánto es " + num1 + " por " + num2 + "?";
+            document.getElementById("respuesta").value = "";
+            document.getElementById("mensaje").innerHTML = "";
+         }
+
+         function verificar() {
+            var r = parseInt(document.getElementById("respuesta").value);
+            if (r === num1 * num2) {
+               document.getElementById("mensaje").innerHTML = "<span style='color:green;'>¡Muy bien!</span>";
+               setTimeout(nuevaPregunta, 1500);
+            } else {
+               document.getElementById("mensaje").innerHTML = "<span style='color:red;'>No. Intente de nuevo.</span>";
+            }
+         }
+
+         window.onload = nuevaPregunta;
+      </script>
+   </head>
+   <body>
+      <h1 id="pregunta"></h1>
+      <form onsubmit="verificar(); return false;">
+         <input id="respuesta" type="number">
+         <input type="button" value="Comprobar" onclick="verificar()">
+      </form>
+      <p id="mensaje"></p>
+   </body>
+</html>

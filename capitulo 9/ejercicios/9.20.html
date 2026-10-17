@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 9.20 - Puntos de calidad</title>
+      <script>
+         function puntosCalidad(promedio) {
+            if (promedio >= 90 && promedio <= 100) return 4;
+            if (promedio >= 80) return 3;
+            if (promedio >= 70) return 2;
+            if (promedio >= 60) return 1;
+            return 0;
+         }
+
+         var p = parseFloat(window.prompt("Introduzca el promedio del estudiante (0 - 100):", "85"));
+         document.writeln("<h1>Puntos de Calidad: " + puntosCalidad(p) + "</h1>");
+      </script>
+   </head>
+   <body></body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 9.24 - Monitoreo de rendimiento</title>
+      <script>
+         var n1, n2, correctas = 0, totalPreguntas = 0;
+
+         function nuevaPregunta() {
+            if (totalPreguntas === 10) {
+               var porcentaje = (correctas / 10) * 100;
+               var res = "<p>Porcentaje obtenido: " + porcentaje + "%</p>";
+               if (porcentaje < 75) {
+                  res += "<p style='color:red;'>Pida ayuda adicional a su instructor.</p>";
+               } else {
+                  res += "<p style='color:green;'>¡Felicidades, está listo para pasar al siguiente nivel!</p>";
+               }
+               document.getElementById("areaJuego").innerHTML = res + "<button onclick='reiniciar()'>Reiniciar</button>";
+               return;
+            }
+
+            n1 = Math.floor(1 + Math.random() * 9);
+            n2 = Math.floor(1 + Math.random() * 9);
+            document.getElementById("pregunta").innerHTML = "Pregunta " + (totalPreguntas + 1) + " de 10: ¿Cuánto es " + n1 + " &times; " + n2 + "?";
+            document.getElementById("respuesta").value = "";
+            document.getElementById("mensaje").innerHTML = "";
+         }
+
+         function verificar() {
+            var r = parseInt(document.getElementById("respuesta").value);
+            totalPreguntas++;
+            if (r === n1 * n2) {
+               correctas++;
+               document.getElementById("mensaje").innerHTML = "¡Correcto!";
+            } else {
+               document.getElementById("mensaje").innerHTML = "Incorrecto.";
+            }
+            setTimeout(nuevaPregunta, 1000);
+         }
+
+         function reiniciar() {
+            correctas = 0;
+            totalPreguntas = 0;
+            location.reload();
+         }
+
+         window.onload = nuevaPregunta;
+      </script>
+   </head>
+   <body>
+      <div id="areaJuego">
+         <h1 id="pregunta"></h1>
+         <input id="respuesta" type="number">
+         <input type="button" value="Responder" onclick="verificar()">
+         <p id="mensaje"></p>
+      </div>
+   </body>
+</html>

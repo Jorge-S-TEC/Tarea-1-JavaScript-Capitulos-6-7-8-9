@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 9.25 - Adivine el número</title>
+      <script>
+         var secreto;
+
+         function iniciar() {
+            secreto = Math.floor(1 + Math.random() * 1000);
+            document.getElementById("mensaje").innerHTML = "";
+            document.getElementById("intento").value = "";
+         }
+
+         function probar() {
+            var val = parseInt(document.getElementById("intento").value);
+            var m = document.getElementById("mensaje");
+
+            if (val === secreto) {
+               m.innerHTML = "<strong style='color:green;'>¡Felicidades. Adivinó el número!</strong><br><button onclick='iniciar()'>Jugar otra vez</button>";
+            } else if (val < secreto) {
+               m.innerHTML = "Demasiado bajo. Intente de nuevo.";
+               document.getElementById("intento").value = "";
+            } else {
+               m.innerHTML = "Demasiado alto. Intente de nuevo.";
+               document.getElementById("intento").value = "";
+            }
+         }
+
+         window.onload = iniciar;
+      </script>
+   </head>
+   <body>
+      <h1>Adivine el número entre 1 y 1000</h1>
+      <input id="intento" type="number" min="1" max="1000">
+      <input type="button" value="Adivinar" onclick="probar()">
+      <p id="mensaje"></p>
+   </body>
+</html>

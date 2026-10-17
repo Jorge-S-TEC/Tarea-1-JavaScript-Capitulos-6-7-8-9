@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 9.23 - Diálogos variados</title>
+      <script>
+         var num1, num2;
+
+         function nuevaPregunta() {
+            num1 = Math.floor(1 + Math.random() * 9);
+            num2 = Math.floor(1 + Math.random() * 9);
+            document.getElementById("pregunta").innerHTML = "¿Cuánto es " + num1 + " por " + num2 + "?";
+            document.getElementById("respuesta").value = "";
+            document.getElementById("mensaje").innerHTML = "";
+         }
+
+         function mensajeCorrecto() {
+            switch (Math.floor(1 + Math.random() * 4)) {
+               case 1: return "¡Muy bien!";
+               case 2: return "¡Excelente!";
+               case 3: return "¡Buen trabajo!";
+               case 4: return "¡Siga así!";
+            }
+         }
+
+         function mensajeIncorrecto() {
+            switch (Math.floor(1 + Math.random() * 4)) {
+               case 1: return "No. Intente de nuevo.";
+               case 2: return "Equivocado. Trate una vez más.";
+               case 3: return "No se dé por vencido.";
+               case 4: return "No. Siga intentando.";
+            }
+         }
+
+         function verificar() {
+            var r = parseInt(document.getElementById("respuesta").value);
+            if (r === num1 * num2) {
+               document.getElementById("mensaje").innerHTML = "<span style='color:green;'>" + mensajeCorrecto() + "</span>";
+               setTimeout(nuevaPregunta, 1500);
+            } else {
+               document.getElementById("mensaje").innerHTML = "<span style='color:red;'>" + mensajeIncorrecto() + "</span>";
+            }
+         }
+
+         window.onload = nuevaPregunta;
+      </script>
+   </head>
+   <body>
+      <h1 id="pregunta"></h1>
+      <input id="respuesta" type="number">
+      <input type="button" value="Verificar" onclick="verificar()">
+      <p id="mensaje"></p>
+   </body>
+</html>

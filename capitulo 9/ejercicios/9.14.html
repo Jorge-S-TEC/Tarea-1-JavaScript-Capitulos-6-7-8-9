@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 9.14 - Múltiplos</title>
+      <script>
+         function verificar() {
+            var a = parseInt(document.getElementById("n1").value);
+            var b = parseInt(document.getElementById("n2").value);
+            var esMult = multiplo(a, b);
+            document.getElementById("salida").innerHTML = 
+               "<p>¿" + b + " es múltiplo de " + a + "?: <strong>" + esMult + "</strong></p>";
+         }
+
+         function multiplo(primero, segundo) {
+            return segundo % primero === 0;
+         }
+      </script>
+   </head>
+   <body>
+      <h1>Verificador de Múltiplos</h1>
+      <form action="#">
+         Primer entero: <input id="n1" type="number">
+         Segundo entero: <input id="n2" type="number">
+         <input type="button" value="Verificar" onclick="verificar()">
+      </form>
+      <div id="salida"></div>
+   </body>
+</html>

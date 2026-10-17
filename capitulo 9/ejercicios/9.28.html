@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 9.28 - Craps con apuestas</title>
+      <script>
+         var saldoBanco = 1000;
+
+         function fraseCharla() {
+            var frases = [
+               "¿Así que se va a quedar en bancarrota?",
+               "¡Vamos, arriésguese!",
+               "¡Está teniendo éxito! ¡Ahora es momento de cambiar sus fichas!"
+            ];
+            return frases[Math.floor(Math.random() * frases.length)];
+         }
+
+         function jugar() {
+            var apuesta = parseFloat(document.getElementById("apuesta").value);
+            if (isNaN(apuesta) || apuesta <= 0 || apuesta > saldoBanco) {
+               alert("Apuesta inválida. Debe ser menor o igual a su saldo actual ($" + saldoBanco + ").");
+               return;
+            }
+
+            var d1 = Math.floor(1 + Math.random() * 6);
+            var d2 = Math.floor(1 + Math.random() * 6);
+            var suma = d1 + d2;
+
+            if (suma === 7 || suma === 11) {
+               saldoBanco += apuesta;
+               document.getElementById("salida").innerHTML = "Tiró " + suma + ". ¡Ganó! " + fraseCharla();
+            } else if (suma === 2 || suma === 3 || suma === 12) {
+               saldoBanco -= apuesta;
+               document.getElementById("salida").innerHTML = "Tiró " + suma + ". Perdió. " + fraseCharla();
+            } else {
+               document.getElementById("salida").innerHTML = "Punto establecido en " + suma + ". " + fraseCharla();
+            }
+
+            document.getElementById("saldo").innerHTML = "$" + saldoBanco.toFixed(2);
+            if (saldoBanco <= 0) {
+               alert("¡Lo siento. Está en bancarrota!");
+               document.getElementById("btnJugar").disabled = true;
+            }
+         }
+      </script>
+   </head>
+   <body>
+      <h1>Craps con Apuestas</h1>
+      <h2>Saldo en Banco: <span id="saldo">$1000.00</span></h2>
+      Apuesta: <input id="apuesta" type="number" min="1" value="100">
+      <input id="btnJugar" type="button" value="Apostar y Tirar" onclick="jugar()">
+      <p id="salida"></p>
+   </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 9.9 - Distancia entre dos puntos</title>
+      <script>
+         function calcular() {
+            var x1 = parseFloat(document.getElementById("x1").value);
+            var y1 = parseFloat(document.getElementById("y1").value);
+            var x2 = parseFloat(document.getElementById("x2").value);
+            var y2 = parseFloat(document.getElementById("y2").value);
+
+            var d = distancia(x1, y1, x2, y2);
+            document.getElementById("resultado").innerHTML = 
+               "<p>Distancia entre puntos: <strong>" + d.toFixed(4) + "</strong></p>";
+         }
+
+         function distancia(x1, y1, x2, y2) {
+            return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+         }
+      </script>
+   </head>
+   <body>
+      <h1>Distancia entre Dos Puntos</h1>
+      <form action="#">
+         Punto 1: X1 <input id="x1" type="number" step="any"> Y1 <input id="y1" type="number" step="any"><br><br>
+         Punto 2: X2 <input id="x2" type="number" step="any"> Y2 <input id="y2" type="number" step="any"><br><br>
+         <input type="button" value="Calcular Distancia" onclick="calcular()">
+      </form>
+      <div id="resultado"></div>
+   </body>
+</html>

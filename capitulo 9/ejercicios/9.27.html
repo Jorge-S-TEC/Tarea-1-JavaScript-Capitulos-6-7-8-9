@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 9.27 - CAI personalizado</title>
+      <script>
+         var n1, n2, opCorrecta;
+
+         function generar() {
+            var nivel = parseInt(document.getElementById("nivel").value);
+            var max = Math.pow(10, nivel);
+            n1 = Math.floor(Math.random() * max);
+            n2 = Math.floor(1 + Math.random() * (max - 1));
+
+            var tipo = parseInt(document.getElementById("tipo").value);
+            if (tipo === 5) tipo = Math.floor(1 + Math.random() * 4);
+
+            var simbolo = "";
+            switch (tipo) {
+               case 1: simbolo = "+"; opCorrecta = n1 + n2; break;
+               case 2: simbolo = "-"; opCorrecta = n1 - n2; break;
+               case 3: simbolo = "&times;"; opCorrecta = n1 * n2; break;
+               case 4: simbolo = "/"; opCorrecta = Math.floor(n1 / n2); break;
+            }
+
+            document.getElementById("pregunta").innerHTML = "¿Cuánto es " + n1 + " " + simbolo + " " + n2 + "?";
+            document.getElementById("respuesta").value = "";
+         }
+
+         function verificar() {
+            var r = parseInt(document.getElementById("respuesta").value);
+            if (r === opCorrecta) {
+               alert("¡Correcto!");
+               generar();
+            } else {
+               alert("Incorrecto. Intente de nuevo.");
+            }
+         }
+
+         window.onload = generar;
+      </script>
+   </head>
+   <body>
+      <h1>Instrucción Asistida por Computadora</h1>
+      Nivel de dificultad (dígitos): 
+      <select id="nivel" onchange="generar()">
+         <option value="1">1 dígito</option>
+         <option value="2">2 dígitos</option>
+      </select>
+      Tipo de operación:
+      <select id="tipo" onchange="generar()">
+         <option value="1">Suma</option>
+         <option value="2">Resta</option>
+         <option value="3">Multiplicación</option>
+         <option value="4">División</option>
+         <option value="5">Mezcla aleatoria</option>
+      </select>
+      <h2 id="pregunta"></h2>
+      <input id="respuesta" type="number">
+      <input type="button" value="Verificar" onclick="verificar()">
+   </body>
+</html>

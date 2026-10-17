@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 9.26 - Contador de intentos</title>
+      <script>
+         var secreto, intentos;
+
+         function iniciar() {
+            secreto = Math.floor(1 + Math.random() * 1000);
+            intentos = 0;
+            document.getElementById("mensaje").innerHTML = "";
+            document.getElementById("intento").value = "";
+         }
+
+         function probar() {
+            var val = parseInt(document.getElementById("intento").value);
+            intentos++;
+            var m = document.getElementById("mensaje");
+
+            if (val === secreto) {
+               var calif = intentos <= 10 ? 
+                  "¡O conoce el secreto o tuvo suerte! (Intentos: " + intentos + ")" : 
+                  "¡Debería poder hacerlo mejor! (Intentos: " + intentos + ")";
+               m.innerHTML = "<strong>" + calif + "</strong><br><button onclick='iniciar()'>Jugar de nuevo</button>";
+            } else if (val < secreto) {
+               m.innerHTML = "Demasiado bajo. (Lleva " + intentos + " intento(s))";
+            } else {
+               m.innerHTML = "Demasiado alto. (Lleva " + intentos + " intento(s))";
+            }
+            document.getElementById("intento").value = "";
+         }
+
+         window.onload = iniciar;
+      </script>
+   </head>
+   <body>
+      <h1>Adivine el número (Búsqueda binaria)</h1>
+      <input id="intento" type="number">
+      <input type="button" value="Intentar" onclick="probar()">
+      <p id="mensaje"></p>
+   </body>
+</html>
