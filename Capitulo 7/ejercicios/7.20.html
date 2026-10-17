@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- Ejercicio 7.20: palindromo.html -->
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Palíndromo de 5 dígitos</title>
+      <script>
+         var entrada;
+         var valido = false;
+
+         while (!valido)
+         {
+            entrada = window.prompt("Introduzca un entero de 5 dígitos:", "12321");
+
+            if (entrada !== null && entrada.length === 5 && !isNaN(parseInt(entrada)))
+            {
+               valido = true;
+            }
+            else
+            {
+               window.alert("Error: Debe introducir un número exactamente de cinco dígitos.");
+            }
+         }
+
+         var num = parseInt(entrada);
+
+         var d1 = Math.floor(num / 10000);
+         var d2 = Math.floor((num % 10000) / 1000);
+         var d3 = Math.floor((num % 1000) / 100);
+         var d4 = Math.floor((num % 100) / 10);
+         var d5 = num % 10;
+
+         if (d1 === d5 && d2 === d4)
+         {
+            document.writeln("<h1>El número " + num + " es un palíndromo</h1>");
+         }
+         else
+         {
+            document.writeln("<h1>El número " + num + " NO es un palíndromo</h1>");
+         }
+      </script>
+   </head>
+   <body></body>
+</html>

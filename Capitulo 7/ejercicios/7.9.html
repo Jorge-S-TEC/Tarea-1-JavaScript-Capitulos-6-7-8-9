@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- Ejercicio 7.9: corregir_segmentos.html -->
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 7.9 - Errores corregidos</title>
+      <script>
+         document.writeln("<h1>Ejercicio 7.9 - Segmentos corregidos</h1>");
+
+         // a) Se quitó el punto y coma después del if
+         var edad = 70;
+         if (edad >= 65)
+            document.writeln("<p>a) Edad es mayor o igual que 65</p>");
+         else
+            document.writeln("<p>a) Edad es menor que 65</p>");
+
+         // b) Se inicializó total en 0
+         var x = 1, total = 0;
+         while (x <= 10)
+         {
+            total += x;
+            ++x;
+         }
+         document.writeln("<p>b) Total del 1 al 10: " + total + "</p>");
+
+         // c) Se agregaron llaves al cuerpo del while
+         var x2 = 1, total2 = 0;
+         while (x2 <= 100)
+         {
+            total2 += x2;
+            ++x2;
+         }
+         document.writeln("<p>c) Total del 1 al 100: " + total2 + "</p>");
+
+         // d) Se corrigió ++y por --y y se cerró la llave
+         var y = 5;
+         document.writeln("<p>d) Conteo descendente: ");
+         while (y > 0)
+         {
+            document.write(y + " ");
+            --y;
+         }
+         document.writeln("</p>");
+      </script>
+   </head>
+   <body></body>
+</html>

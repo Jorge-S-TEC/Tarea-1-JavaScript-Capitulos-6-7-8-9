@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!-- Ejercicio 7.13: comisiones.html -->
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Calculadora de comisiones</title>
+      <script>
+         var cant1 = parseInt(window.prompt("Cantidad vendida del Artículo 1 ($239.99):", "0"));
+         var cant2 = parseInt(window.prompt("Cantidad vendida del Artículo 2 ($129.75):", "0"));
+         var cant3 = parseInt(window.prompt("Cantidad vendida del Artículo 3 ($99.95):", "0"));
+         var cant4 = parseInt(window.prompt("Cantidad vendida del Artículo 4 ($350.89):", "0"));
+
+         var ventasBrutas = (cant1 * 239.99) + (cant2 * 129.75) + (cant3 * 99.95) + (cant4 * 350.89);
+         var sueldo = 200 + (0.09 * ventasBrutas);
+
+         document.writeln("<h1>Ingresos del Vendedor</h1>");
+         document.writeln("<p>Ventas brutas totales: $" + ventasBrutas.toFixed(2) + "</p>");
+         document.writeln("<p>Sueldo total (base $200 + 9%): <strong>$" + sueldo.toFixed(2) + "</strong></p>");
+      </script>
+   </head>
+   <body></body>
+</html>

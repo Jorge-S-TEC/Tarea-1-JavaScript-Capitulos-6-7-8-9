@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- Ejercicio 7.7: correccion_errores.html -->
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Ejercicio 7.7 - Corrección de errores</title>
+      <script>
+         document.writeln("<h1>Correcciones del Ejercicio 7.7</h1>");
+
+         // a) Corrección: se agrega la llave de cierre '}'
+         var c = 1, producto = 1;
+         while (c <= 5) {
+            producto *= c;
+            ++c;
+         }
+         document.writeln("<p>a) Ciclo corregido con llave de cierre. Producto: " + producto + "</p>");
+
+         // b) Corrección: se elimina el ';' después del else
+         var genero = 1;
+         if (genero == 1)
+            document.writeln("<p>b) Género: Mujer</p>");
+         else
+            document.writeln("<p>b) Género: Hombre</p>");
+      </script>
+   </head>
+   <body></body>
+</html>

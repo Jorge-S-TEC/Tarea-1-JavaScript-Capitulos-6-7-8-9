@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- Ejercicio 7.22: cifrado.html -->
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Cifrado de datos de 4 dígitos</title>
+      <script>
+         var entrada = window.prompt("Introduzca un entero de cuatro dígitos para cifrar:", "1234");
+         var num = parseInt(entrada);
+
+         var d1 = Math.floor(num / 1000);
+         var d2 = Math.floor((num % 1000) / 100);
+         var d3 = Math.floor((num % 100) / 10);
+         var d4 = num % 10;
+
+         // Reemplazar con (dígito + 7) módulo 10
+         d1 = (d1 + 7) % 10;
+         d2 = (d2 + 7) % 10;
+         d3 = (d3 + 7) % 10;
+         d4 = (d4 + 7) % 10;
+
+         // Intercambiar primero con tercero, y segundo con cuarto
+         var temp;
+         temp = d1; d1 = d3; d3 = temp;
+         temp = d2; d2 = d4; d4 = temp;
+
+         var cifrado = "" + d1 + d2 + d3 + d4;
+
+         document.writeln("<h1>Cifrado de datos</h1>");
+         document.writeln("<p>Número original: " + entrada + "</p>");
+         document.writeln("<p>Número cifrado: <strong>" + cifrado + "</strong></p>");
+      </script>
+   </head>
+   <body></body>
+</html>

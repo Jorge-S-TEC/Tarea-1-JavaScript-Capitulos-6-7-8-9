@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- Ejercicio 7.11: kilometraje.html -->
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Kilometraje de gasolina</title>
+      <script>
+         var kilometros;
+         var litros;
+         var totalKilometros = 0;
+         var totalLitros = 0;
+         var viaje = 1;
+
+         var entradaKm = window.prompt("Escriba los kilómetros conducidos (-1 para salir):", "0");
+         kilometros = parseFloat(entradaKm);
+
+         while (kilometros != -1)
+         {
+            var entradaLitros = window.prompt("Escriba los litros usados en este viaje:", "0");
+            litros = parseFloat(entradaLitros);
+
+            var kmPorLitroViaje = kilometros / litros;
+            totalKilometros += kilometros;
+            totalLitros += litros;
+            var kmPorLitroTotal = totalKilometros / totalLitros;
+
+            document.writeln("<h3>Viaje " + viaje + "</h3>");
+            document.writeln("<p>Kilómetros/litro en este viaje: " + kmPorLitroViaje.toFixed(2) + "</p>");
+            document.writeln("<p>Kilómetros/litro totales hasta ahora: " + kmPorLitroTotal.toFixed(2) + "</p>");
+
+            viaje++;
+
+            entradaKm = window.prompt("Escriba los kilómetros conducidos (-1 para salir):", "0");
+            kilometros = parseFloat(entradaKm);
+         }
+      </script>
+   </head>
+   <body></body>
+</html>

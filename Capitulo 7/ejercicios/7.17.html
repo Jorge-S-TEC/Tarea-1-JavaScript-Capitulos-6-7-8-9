@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- Ejercicio 7.17: dos_mayores.html -->
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Los dos números más grandes</title>
+      <script>
+         var n1 = parseInt(window.prompt("Introduzca el número 1 de 10:", "0"));
+         var n2 = parseInt(window.prompt("Introduzca el número 2 de 10:", "0"));
+         var mayor1, mayor2;
+
+         if (n1 > n2) {
+            mayor1 = n1;
+            mayor2 = n2;
+         } else {
+            mayor1 = n2;
+            mayor2 = n1;
+         }
+
+         var contador = 2;
+         while (contador < 10)
+         {
+            contador++;
+            var num = parseInt(window.prompt("Introduzca el número " + contador + " de 10:", "0"));
+
+            if (num > mayor1)
+            {
+               mayor2 = mayor1;
+               mayor1 = num;
+            }
+            else if (num > mayor2)
+            {
+               mayor2 = num;
+            }
+         }
+
+         document.writeln("<h1>Resultados</h1>");
+         document.writeln("<p>El número mayor es: <strong>" + mayor1 + "</strong></p>");
+         document.writeln("<p>El segundo mayor es: <strong>" + mayor2 + "</strong></p>");
+      </script>
+   </head>
+   <body></body>
+</html>
