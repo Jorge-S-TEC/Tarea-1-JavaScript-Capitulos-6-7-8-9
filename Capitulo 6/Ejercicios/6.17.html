@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 6.17</title>
+</head>
+<body>
+    <h1>Ejercicio 6.17</h1>
+    <script>
+        var n1 = parseInt(window.prompt("Escriba el primer entero:"));
+        var n2 = parseInt(window.prompt("Escriba el segundo entero:"));
+
+        if (n1 > n2) {
+            window.alert(n1 + " es mayor que " + n2);
+            document.writeln("<p>" + n1 + " es mayor que " + n2 + "</p>");
+        }
+        if (n2 > n1) {
+            window.alert(n2 + " es mayor que " + n1);
+            document.writeln("<p>" + n2 + " es mayor que " + n1 + "</p>");
+        }
+        if (n1 == n2) {
+            document.write("<p>Estos números son iguales</p>");
+        }
+    </script>
+</body>
+</html>

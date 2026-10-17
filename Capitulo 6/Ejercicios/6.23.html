@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 6.23</title>
+</head>
+<body>
+    <h1>Ejercicio 6.23</h1>
+    <script>
+        var n1 = parseInt(window.prompt("Primer número:"));
+        var n2 = parseInt(window.prompt("Segundo número:"));
+        var n3 = parseInt(window.prompt("Tercer número:"));
+
+        var negativos = 0, positivos = 0, ceros = 0;
+
+        if (n1 < 0) negativos++; else if (n1 > 0) positivos++; else ceros++;
+        if (n2 < 0) negativos++; else if (n2 > 0) positivos++; else ceros++;
+        if (n3 < 0) negativos++; else if (n3 > 0) positivos++; else ceros++;
+
+        window.alert("Negativos: " + negativos + "\nPositivos: " + positivos + "\nCeros: " + ceros);
+        document.writeln("<p>Negativos: " + negativos + "</p>");
+        document.writeln("<p>Positivos: " + positivos + "</p>");
+        document.writeln("<p>Ceros: " + ceros + "</p>");
+    </script>
+</body>
+</html>
